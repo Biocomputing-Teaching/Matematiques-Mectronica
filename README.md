@@ -1,2 +1,2 @@
 # Matemàtiques Mecatrònica
-Apunts i exercicis per a un curs de Matemàtiques bàsiques d'enginyeria
+Apunts i exercicis per a un curs de Matemàtiques bàsiques en Enginyeria
