@@ -1,0 +1,72 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{mathtools}
+
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+
+\newcommand\uvec[1]{\textbf{#1}}
+
+%\cfoot{\bf Pràctica 1 MATLAB}
+
+\title{Pràctica MATLAB 2 \\ Matemàtiques I \\ Grau en Enginyeria Mecatrònica \\\vspace{2cm} \includegraphics[width=7cm]{../figures/FCT}}
+\author{Jordi Villà i Freixa}
+\date{January 12th 2022}
+
+\begin{document}
+
+\maketitle
+
+Exercicis a resoldre usant MATLAB:\footnote{\begin{itemize}
+  \item Cal penjar al moodle un fitxer MATLAB *.mlx que contingui totes les operacions i les corresponents explicacions.
+  \item Es treballa per parelles.
+  \item Assegureu-vos que teniu un grup creat al moodle amb els membres de la parella per tal de poder avaluar tothom de forma correcta.
+%  \item No es considerarà lliurada la pràctica (i per tant no tindrà nota) fins que no la vingueu a explicar al professor
+\end{itemize}}
+
+\begin{enumerate}
+  \item Donada la funció $f(x,y)=x^3 \exp{-x^2-y^2)}$, determinar:
+  \begin{enumerate}
+    \item La derivada direccional de $f$ en el punt $(1,-1)$ i en la direcció del vector $\vec{v}=(1,-1)$.
+    \item L'equació del pla tangent a la funció en el punt $(1,-1)$.
+    \item Analitza els seus punts crítics.
+  \end{enumerate}
+
+  \item Troba la superfície de la porció d'una esfera de radi 5 que està restringida pel cilindre $x^2+y^2=16$ pel damunt del plànol $XY$. Feu el càlcul usant una parametrització en coordenades cartesianes i també en coordenades cilíndriques i comproveu que el resultat és equivalent.
+  %https://tutorial.math.lamar.edu/classes/calciii/parametricsurfaces.aspx
+
+  \item Donats el camp vectorial $\vec{A}=x \hat{\uvec{i}}+y^2\hat{\uvec{j}}+\frac{xy}{z+1}\hat{\uvec{k}}$ i la corba $\mathcal{L}: x(t)=t^2, \, y(t)=t^2, \, z(t)=t$, amb $t\in [0,2]$:
+  \begin{enumerate}
+    \item Representa gràficament el camí i el camp vectorial al llarg del mateix.
+    \item Calcula la longitud de la corba
+    \item Calcula la circulació del camp vectorial $\vec{A}$ sobre la corba $\mathcal{L}$ en l'intèrval de $t$ donat.
+  \end{enumerate}
+
+  \item Donats el camp vectorial $\vec{A}=x^2 \hat{\uvec{i}}+y\hat{\uvec{j}}+\frac{xy}{z+1}\hat{\uvec{k}}$ i la superfície semiesfèrica $x^2+y^2+z^2=9$ i $z>0$
+\begin{enumerate}
+  \item És el camp solenoïdal?
+  \item Determineu el flux del camp vectorial $\vec{A}$ que travessa la superfície en direcció radial i en el sentit que apunta cap a fora de la semiesfera.
+\end{enumerate}
+
+\item $\vec{a}$ és un camp vectorial donat per $\vec{a}=(xy^2+z)\hat{\uvec{i}}+(x^2y+2)\hat{\uvec{j}}+x\hat{\uvec{k}}$, $A$ és el punt $(1,1,2)$ i $B=(2,\frac{1}{2},2)$.
+\begin{enumerate}
+  \item Troba la integral $I=\int_A^B \uvec{a} \cdot d\uvec{r}$,
+ al llarg de dues corbes diferents:
+\begin{enumerate}
+  \item $\mathcal{L}_1: x(t)=t, \, y(t)=\frac{1}{t}, \, z(t)=2$
+  \item $\mathcal{L}_2: y(t)=3-x, \, z(t)=2$
+\end{enumerate}
+\item Mostra que el camp vectorial $\vec{a}$ és conservatiu.
+\item Troba la funció de la qual $\vec{a}$ és el gradient. Què representa aquesta funció?
+\end{enumerate}\end{enumerate}
+
+\end{document}

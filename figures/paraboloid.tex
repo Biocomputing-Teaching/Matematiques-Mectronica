@@ -1,0 +1,65 @@
+\documentclass[]{standalone}
+% de https://tex.stackexchange.com/questions/641125/draw-a-paraboloid-and-its-contours-in-tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$, ylabel=$y$, zlabel=$z$, 
+xmin=-1.5, xmax=1.5,
+ymin=-1.5, ymax=1.5,
+zmin=-0.5, zmax=2,
+axis lines=middle,
+every axis x label/.style={  at={(ticklabel* cs:1.05)},  },
+every axis y label/.style={  at={(ticklabel* cs:1.05)},  },
+every axis z label/.style={  at={(ticklabel* cs:1.05)},  },
+]
+
+% Circles at xy-plane
+\pgfplotsinvokeforeach{1, 0.5, 0.2}{%%
+\pgfmathsetmacro\Radius{#1}
+\addplot3[blue, 
+domain=0:360, variable=\t
+]({\Radius*cos(\t)},{\Radius*sin(\t)},{0});
+}%%
+
+% Paraboloid
+\addplot3[
+    mesh,
+    samples=100,
+    opacity=0.3,
+    domain=-sqrt(2):sqrt(2),
+    restrict z to domain=0:1.5
+]
+{x^2+y^2};
+
+% Plane 
+\addplot3[surf, shader=faceted,
+color=orange, 
+opacity=0.01, fill opacity=0.1, 
+domain=-1.5:1.5, 
+](x,y,1);
+
+% Circle at plane
+\addplot3[red, smooth, 
+domain=0:360, variable=\t
+]({cos(\t)},{sin(\t)},{1});
+
+% line at plane
+\addplot3[red, smooth, 
+domain=0:sqrt(2)/2, variable=\t
+]({\t},{\t},{1});
+
+% Annotations 1/2
+
+\coordinate[label=](B) at (1.5, 1.5, 1);
+\coordinate[label=](D) at({cos(30)},{sin(30)},{0});
+\end{axis}
+
+% Annotations 2/2
+
+\draw[semithick] (B) -- +(1:1) node[right, align=left]{
+Pla $z=x^2+y^2=1$};
+\draw[semithick] (D) -- +(1:1) node[right, align=left]{Contorn de \\ $f(x,y)=x^2+y^2$.};
+\end{tikzpicture}   
+\end{document}
